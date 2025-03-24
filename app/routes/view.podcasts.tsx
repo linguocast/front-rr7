@@ -1,8 +1,6 @@
 import { useParams } from 'react-router'
 import axios from 'axios'
 import type { Podcast } from '../types/podcasts.types'
-import { Helmet } from 'react-helmet'
-import { useLoaderData } from 'react-router'
 import type { Route } from '../routes/+types/view.podcasts.ts'
 // import { json } from '@react-router/node'
 

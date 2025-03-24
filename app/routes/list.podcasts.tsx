@@ -2,7 +2,6 @@ import { Link, useLoaderData } from 'react-router'
 // import { json } from '@react-router/node'
 import axios from 'axios'
 import type { MinifiedPodcast } from '../types/podcasts.types'
-import { Helmet } from 'react-helmet'
 
 // Server loader function
 export async function loader() {
@@ -21,15 +20,10 @@ export async function loader() {
 }
 
 export default function Podcasts() {
-  const podcasts = useLoaderData() as MinifiedPodcast[]
+  const podcasts = useLoaderData<typeof loader>()
 
   return (
     <div>
-      <Helmet>
-        <title>Podcasts</title>
-        <meta name="description" content="Browse our podcast collection" />
-      </Helmet>
-
       <h1>Podcasts</h1>
 
       {podcasts.length === 0 ? (
